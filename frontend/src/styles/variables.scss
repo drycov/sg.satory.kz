@@ -1,0 +1,30 @@
+// Core brand colours (Forest theme)
+$brand-primary: #2E6F40;       // Forest Green — Hex #2E6F40 :contentReference[oaicite:0]{index=0}
+$brand-primary-light: #4A8C5A;
+$brand-primary-dark: #1B4C2C;
+
+// Accent colours
+$brand-accent: #68BA7F;
+$brand-accent-hover: #4FAA66;
+$brand-accent-light: #A6E9C8;
+
+// Neutrals
+$neutral-100: #F5F7F6;
+$neutral-200: #E7EBE9;
+$neutral-300: #D0D6D2;
+$neutral-400: #9AA39A;
+$neutral-500: #333333;
+
+// Surfaces
+$surface-default: $neutral-100;
+$surface-card: #FFFFFF;
+
+// Semantic
+$success: #28A745;
+$error:   #DC3545;
+$warning: #FFC107;
+$info:    #17A2B8;
+
+// Theme mode
+$theme-bg-light: $surface-default;
+$theme-text-dark: $neutral-500;

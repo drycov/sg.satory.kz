@@ -1,0 +1,36 @@
+@use '../../styles/_index.scss' as *;
+
+.dashboard-title {
+  color: var(--brand-primary);
+}
+
+.dashboard-card {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+  }
+
+  .dashboard-icon {
+    color: var(--brand-accent-hover);
+  }
+
+  .dashboard-card-title {
+    font-size: 1.1rem;
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+    color: var(--brand-primary-dark);
+  }
+}
+
+@media (max-width: 767px) {
+  .dashboard-card {
+    text-align: center;
+
+    .dashboard-icon {
+      margin: 0 auto 1rem auto;
+      display: block;
+    }
+  }
+}
