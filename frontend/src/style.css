@@ -1,0 +1,206 @@
+/* ══════════════════════════════════════════════════════════════════
+   🎨 Theme-aware base styles
+   Поддержка плавных переходов между светлой и тёмной темой
+   ══════════════════════════════════════════════════════════════════ */
+:root[data-bs-theme="light"] {
+  --bs-body-bg: #f8f9fa;
+  --bs-surface-bg: #ffffff;
+  --bs-surface-border: rgba(0, 0, 0, 0.08);
+  --bs-surface-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+}
+
+:root[data-bs-theme="dark"] {
+  --bs-body-bg: #1e1f22;
+  --bs-surface-bg: #2b2d31;
+  --bs-surface-border: rgba(255, 255, 255, 0.1);
+  --bs-surface-shadow: 0 2px 8px rgba(0, 0, 0, 0.45);
+}
+
+/* ──────────────── Глобальные переходы ──────────────── */
+body {
+  transition: background-color 0.35s ease, color 0.35s ease;
+  background-color: var(--bs-body-bg);
+}
+
+main {
+  background-color: var(--bs-body-bg);
+  min-height: 100vh;
+  padding: 1.25rem;
+  transition: background-color 0.35s ease;
+  overflow-x: hidden;
+}
+
+/* ──────────────── Layout ──────────────── */
+.navbar {
+  z-index: 1055;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+@media (max-width: 992px) {
+  main {
+    margin-left: 0 !important;
+  }
+}
+
+/* ──────────────── Sidebar / Offcanvas ──────────────── */
+.offcanvas-start {
+  width: 80% !important;
+  max-width: 320px !important;
+  transition: transform 0.3s ease-in-out;
+  backdrop-filter: blur(6px);
+}
+
+.offcanvas {
+  border-right: 1px solid var(--bs-surface-border);
+  border-radius: 0 0.5rem 0.5rem 0;
+  box-shadow: inset -1px 0 0 rgba(255, 255, 255, 0.05),
+    2px 0 8px rgba(0, 0, 0, 0.25);
+}
+
+.offcanvas.bg-dark {
+  background-color: rgba(33, 37, 41, 0.95) !important;
+}
+
+.offcanvas.bg-light {
+  background-color: rgba(255, 255, 255, 0.9) !important;
+}
+
+/* ──────────────── Dropdowns ──────────────── */
+.dropdown-menu {
+  border: none !important;
+  border-radius: 0.75rem;
+  box-shadow: var(--bs-surface-shadow);
+  animation: fadeSlide 0.18s ease-out both;
+  backdrop-filter: blur(6px);
+}
+
+@keyframes fadeSlide {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Hover эффект внутри Dropdown */
+.dropdown-item {
+  border-radius: 0.4rem;
+  transition: background-color 0.15s ease;
+}
+.dropdown-item:hover {
+  background-color: rgba(13, 110, 253, 0.1);
+}
+
+/* Без стрелок для всех кастомных Dropdown.Toggle */
+.no-caret::after {
+  display: none !important;
+  content: none !important;
+}
+
+/* ──────────────── Navbar элементы ──────────────── */
+.navbar .nav-link {
+  transition: color 0.2s ease;
+}
+.navbar .nav-link:hover {
+  color: var(--bs-primary) !important;
+}
+
+/* ──────────────── Sidebar Navigation ──────────────── */
+.nav-link {
+  transition: all 0.2s ease-in-out;
+  border-radius: 0.5rem;
+  padding: 0.55rem 0.9rem;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.nav-link:hover {
+  background-color: rgba(13, 110, 253, 0.12);
+  text-decoration: none;
+  opacity: 1 !important;
+}
+
+.nav-link.active {
+  background-color: var(--bs-primary);
+  color: #fff !important;
+  box-shadow: 0 0 6px rgba(13, 110, 253, 0.35);
+  position: relative;
+}
+.nav-link.active::before {
+  content: "";
+  position: absolute;
+  left: 0.4rem;
+  width: 3px;
+  height: 100%;
+  background-color: #0d6efd;
+  border-radius: 2px;
+}
+
+/* ──────────────── Dropdown mobile ──────────────── */
+@media (max-width: 768px) {
+  .dropdown-menu {
+    right: 0 !important;
+    left: auto !important;
+    min-width: 11rem;
+  }
+
+  .dropdown-toggle {
+    padding: 4px !important;
+  }
+
+  .dropdown-item {
+    font-size: 0.95rem;
+    padding: 0.55rem 1rem;
+  }
+}
+
+@media (max-width: 992px) {
+  .dropdown-menu.show {
+    position: static !important;
+    float: none !important;
+    width: 100%;
+    margin-top: 0 !important;
+    border: none !important;
+    box-shadow: none !important;
+    background: transparent !important;
+  }
+
+  .dropdown-item {
+    border-radius: 0.5rem;
+    margin-bottom: 0.25rem;
+    background-color: rgba(255, 255, 255, 0.05);
+  }
+}
+
+/* ──────────────── Hover Highlights ──────────────── */
+.cursor-pointer:hover {
+  background-color: rgba(13, 110, 253, 0.1) !important;
+  border-radius: 0.4rem;
+  transition: background-color 0.15s ease;
+}
+
+/* ──────────────── Utility Enhancements ──────────────── */
+.shadow-soft {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.text-faint {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.bg-surface {
+  background-color: var(--bs-surface-bg);
+  border: 1px solid var(--bs-surface-border);
+  box-shadow: var(--bs-surface-shadow);
+  border-radius: 0.75rem;
+}
+.transition-fast {
+  transition: all 0.2s ease-in-out;
+}

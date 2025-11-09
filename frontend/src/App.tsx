@@ -1,18 +1,21 @@
-import { AuthProvider } from "./contexts/AuthContext";
-import AppRoutes from "./router/AppRoutes";
+
+import RouteController from "@routes/RouteController";
+import { OverlayProvider } from "./context/OverlayContext";
 
 /**
- * Опорная точка приложения.
- * Подключает централизованный маршрутизатор и общие провайдеры.
+ * Главный layout приложения:
+ * ┌─────────────────────────────┐
+ * │ Header (фиксированный)     │
+ * ├───────────────┬────────────┤
+ * │ Sidebar       │ Контент    │
+ * └───────────────┴────────────┘
  */
-function App() {
-  return (
-    <AuthProvider>
+export default function App() {
 
-      <AppRoutes />
-    </AuthProvider>
+  return (
+    <OverlayProvider>
+      <RouteController />
+    </OverlayProvider>
 
   );
 }
-
-export default App;

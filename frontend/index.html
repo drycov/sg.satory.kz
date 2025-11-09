@@ -2,47 +2,40 @@
 <html lang="ru">
   <head>
     <meta charset="UTF-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1.0, viewport-fit=cover"
-    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
     <title>VPN User Manager</title>
 
-    <!-- Favicon и иконка -->
+    <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="/logo.svg" />
 
-    <!-- Web App Manifest -->
+    <!-- Manifest -->
     <link rel="manifest" href="/manifest.webmanifest" />
     <meta name="theme-color" content="#0d6efd" />
 
-    <!-- SEO и PWA -->
-    <meta
-      name="description"
-      content="Корпоративная панель управления пользователями VPN RouterOS и FreeRADIUS"
-    />
+    <!-- SEO -->
+    <meta name="description" content="Корпоративная панель управления пользователями VPN RouterOS и FreeRADIUS" />
     <meta name="application-name" content="VPN User Manager" />
+
+    <!-- PWA support -->
     <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="default" />
-    <meta name="apple-mobile-web-app-title" content="VPN Manager" />
+    <meta name="apple-mobile-web-app-title" content="VPN User Manager" />
 
-    <!-- Apple Touch Icon -->
+    <!-- Icons -->
     <link rel="apple-touch-icon" href="/icons/icon-192x192.png" />
+    <link rel="apple-touch-icon" sizes="512x512" href="/icons/icon-512x512.png" />
 
-    <!-- Цвета для Windows tiles -->
+    <!-- Windows tile color -->
     <meta name="msapplication-TileColor" content="#0d6efd" />
 
-    <!-- Основной CSS -->
-    <link rel="stylesheet" href="/src/index.scss" />
+    <!-- CSS -->
+    <link rel="stylesheet" href="/src/style.css" />
   </head>
 
   <body>
-    <noscript>
-      Для работы приложения требуется JavaScript.
-    </noscript>
-
+    <noscript>Для работы приложения требуется JavaScript.</noscript>
     <div id="root"></div>
-
-    <!-- Точка входа -->
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>
