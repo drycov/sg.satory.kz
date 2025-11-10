@@ -15,6 +15,7 @@ import { captureException } from "./utils/logger";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "react-toastify/dist/ReactToastify.css";
 import { AuthProvider } from "./context/AuthContext";
+import { SettingsProvider } from "./context/SettingsContext";
 
 // ──────────────────────────────
 // Компонент обработки ошибок
@@ -61,17 +62,18 @@ createRoot(rootElement).render(
         <HelmetProvider>
           <BrowserRouter>
             {/* 👇 Добавляем глобальный Theme Provider */}
-            <AuthProvider>
+            <SettingsProvider>
+              <AuthProvider>
 
-              <ThemeContextProvider>
-                <SidebarProvider>
+                <ThemeContextProvider>
+                  <SidebarProvider>
 
-                  <App />
-                </SidebarProvider>
+                    <App />
+                  </SidebarProvider>
 
-              </ThemeContextProvider>
-            </AuthProvider>
-
+                </ThemeContextProvider>
+              </AuthProvider>
+            </SettingsProvider>
             <ToastContainer
               position="top-right"
               autoClose={4000}
