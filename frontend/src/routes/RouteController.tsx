@@ -10,7 +10,7 @@ const UsersPage = lazy(() => import("@pages/UsersPage"));
 const SettingsPage = lazy(() => import("@pages/SettingsPage"));
 const LoginPage = lazy(() => import("@pages/LoginPage"));
 const NotFoundPage = lazy(() => import("@components/NotFoundPage"));
-const VpnUsersPage = lazy(() => import("@/pages/VpnUsersPage"));
+const MergedUsersPage = lazy(() => import("@/pages/MergedUsersPage"));
 /**
  * Централизованный контроллер маршрутов
  * — отвечает за всю маршрутизацию внутри приложения
@@ -28,7 +28,7 @@ export default function RouteController() {
           <Route element={<DashboardLayout />}>
             <Route index element={<HomePage />} />
             <Route path="/users" element={<UsersPage />} />
-            <Route path="/vpn-users" element={<VpnUsersPage/>} />
+            <Route path="/vpn-users" element={<MergedUsersPage/>} />
             <Route path="/settings" element={<SettingsPage />} />
           </Route>
         </Route>

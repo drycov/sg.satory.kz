@@ -53,7 +53,7 @@ const fetchVpnUsers = (): Promise<VpnUser[]> =>
           is_active: true,
           connected: true,
           last_login: "2025-11-10T21:20:00Z",
-          group: "corp.satory.kz",
+          group: "bdl",
         },
         {
           id: 2,
@@ -63,7 +63,7 @@ const fetchVpnUsers = (): Promise<VpnUser[]> =>
           is_active: false,
           connected: false,
           last_login: "2025-11-09T09:15:00Z",
-          group: "corp.satory.kz",
+          group: "bdl",
         },
         {
           id: 3,
@@ -181,7 +181,7 @@ export default function VpnUsersPage() {
             <ShieldLock /> VPN-пользователи
           </h4>
           <small className="text-muted">
-            Управление учётными записями VPN RouterOS / FreeRADIUS / RADIUS Realm
+            Управление учётными записями VPN
           </small>
         </div>
 
@@ -239,7 +239,7 @@ export default function VpnUsersPage() {
               <th>#</th>
               <th>Логин</th>
               <th>IP-адрес</th>
-              <th>Группа (Realm)</th>
+              <th>Группа</th>
               <th>Роль</th>
               <th>Статус</th>
               <th className="text-center">Подключение</th>
